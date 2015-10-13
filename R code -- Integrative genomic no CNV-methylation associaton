@@ -1,10 +1,7 @@
 # R source code 
 # Main function for integrative models with no CNV-methylation association
  
- {\color{red}  Marie, specify what the different input of the function are -- you can just provide them in the function as comments.  Also same comments as above for the intersection of sets.}
-
-\begin{verbatim}
-Same_Level_Original <- function(Gene,methy,CNV,y,Gene_CNV,Gene_Methy,
+ Same_Level_Original <- function(Gene,methy,CNV,y,Gene_CNV,Gene_Methy,
                                 multi_methy= FALSE, intra =FALSE, pathway=FALSE,
                                 nfolds=10,alpha =1,nfoldsIntra = 10)
 {
