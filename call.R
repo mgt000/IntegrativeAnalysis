@@ -35,7 +35,7 @@ ana = Integrated_Original(Gene = Gene, methy = methy, CNV = CNV, y = y,
 
 ana$R2.adj
 
-# Run the Integrative-network scenario using 
+# Run the Integrative-network scenario using
 # univariate models for the association between methylation sites and CNVs
 ana.network = Integrated_Original(Gene = Gene, methy = methy, CNV = CNV, y = y,
                           Gene_CNV = Gene_CNV, Gene_Methy = Gene_Methy, 
