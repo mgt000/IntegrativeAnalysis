@@ -1,10 +1,9 @@
 # Function called in main code
 
-#-x : a vector or a matrix containing the explanatory variables
-#-y : a vector or a matrix containung the response variables
-#-alpha is to indicate the penalty to use in the glmnet function, by default alpha = 1 that corresponds
-#to the lasso penalty
-#-nfolds is the number of folds used during the cross-validation procedure of the glmnet function 
+# -x : vector or matrix containing explanatory variables
+# -y : vector or matrix containing response variables
+# -alpha = penalty term in the glmnet function, the default alpha = 1 corresponds to the lasso penalty
+# -nfolds = number of folds used in the cross-validation procedure of the glmnet function 
 
 regression <- function(x, y, alpha=1, nfolds=10)
 {
