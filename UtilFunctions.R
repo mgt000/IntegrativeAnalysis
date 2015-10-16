@@ -3,7 +3,7 @@
 # -x : vector or matrix containing explanatory variables
 # -y : vector or matrix containing response variables
 # -alpha = penalty term in the glmnet function, the default alpha = 1 corresponds to the lasso penalty
-# -nfolds = number of folds used in the cross-validation procedure of the glmnet function 
+# -nfolds = number of folds used in cross-validation procedure of the glmnet function 
 
 regression <- function(x, y, alpha=1, nfolds=10)
 {
