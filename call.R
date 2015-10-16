@@ -1,4 +1,5 @@
-#R script calling the main function and running on the demo data (Data1 from GBM)
+# R script calling the main function and running on the demo datasets (Data1 from GBM)
+
 library(glmnet)
 library(grpreg)
 library(survival)
