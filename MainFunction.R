@@ -19,7 +19,7 @@
 # -intra = TRUE means that an Integrative-gene scenario is considered
 # -pathway = TRUE means that an Integrative-network scenario is considered
 # -nfolds = number of folds used in the cross-validation procedure of the glmnet function called in  
-#the function "regression" (defined in glmReg.R)
+#the function "regression" (defined in UtilFunctions.R)
 # -alpha = penalty used in the glmnet function, alpha = 1 corresponds to the lasso penalty
 # -nfoldsIntra = number of folds used in the cross-validation procedure of the glmnet function
 
