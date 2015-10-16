@@ -1,29 +1,28 @@
 # R source code 
 # Main function for integrative models with no CNV-methylation association
 
-#Arguments to input in the function "Same_Level_Original" :
+# Arguments to input in the function "Same_Level_Original" :
 
-#-Gene = the matrix of genes, number of columns = number of genes
-#-methy = the matrix of methylation sites, number of columns = number of methylation sites
-#-CNV = the matrix of CNVs, number of columns = number of CNVs
-#-y = the matrix containing the survival time (y), the status (censored or not) (Event), and others 
-#clinical variables
-#-Gene_CNV = matrix of three columns. First column contains the identifiers of CNVs, 
-#the second column the gene at which CNV belongs, and the third column the associated
+# -Gene = matrix of genes, number of columns = number of genes
+# -methy = matrix of methylation sites, number of columns = number of methylation sites
+# -CNV = matrix of CNVs, number of columns = number of CNVs
+# -y = matrix containing survival time (y), censoring indicator (Event), and other clinical variables
+# -Gene_CNV = matrix of three columns. The first column contains the CNV identifiers,  
+#the second column the gene to which the CNV maps, and the third column the associated
 #functional network
-#-Gene_Methy is in the same format that Gene_CNV expect the first column that contains
-#the identifiers of methylations sites
-#-Gene_Pathway = matrix of two columns. First column contains the identifiers of genes, and
+# -Gene_Methy has the same format as Gene_CNV expect that the first column contains
+#the identifiers for methylations sites
+# -Gene_Pathway = matrix of two columns. First column contains the gene identifiers of genes and
 #the second column gives the associated functional network
-#-multi_methy = TRUE means that a multivariate model is used for the association between 
-#methylation sites and CNVs if FALSE a univariate model is performed
-#-intra = TRUE means that an Integrative-gene scenario is performed
-#pathway = TRUE means that an Integrative-network scenario is performed
-#-nfolds is the number of folds used in the cross-validation procedure of the glmnet function within 
-#the function "regression"
-#-alpha is to indicate the penalty to use in the glmnet function, alpha = 1 corresponds to the 
-#lasso penalty
-#-nfoldsIntra is the number of folds used in the cross-validation procedure by the glmnet function 
+# -multi_methy = TRUE means that a multivariate model is used for the association between 
+#methylation sites and CNVs, if FALSE univariate models are fitted
+# -intra = TRUE means that an Integrative-gene scenario is considered
+# -pathway = TRUE means that an Integrative-network scenario is considered
+# -nfolds = number of folds used in the cross-validation procedure of the glmnet function called in  
+#the function "regression" defined in UtilFunctions.R
+# -alpha = penalty to use in the glmnet function, alpha = 1 corresponds to the lasso penalty
+# -nfoldsIntra = number of folds for the cross-validation procedure in the glmnet function 
+
  Same_Level_Original <- function(Gene,methy,CNV,y,Gene_CNV,Gene_Methy,
                                 multi_methy= FALSE, intra =FALSE, pathway=FALSE,
                                 nfolds=10,alpha =1,nfoldsIntra = 10)
