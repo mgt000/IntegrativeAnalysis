@@ -1,7 +1,7 @@
 # R source code
 # Main function for integrative models allowing for CNV-methylation association
 
-#Arguments to input in the function "Integrated_Original" and "Same_Level_function" :
+#Arguments to input in the function "Integrated_Original" :
 
 #-Gene = the matrix of genes, number of columns = number of genes
 #-methy = the matrix of methylation sites, number of columns = number of methylation sites
