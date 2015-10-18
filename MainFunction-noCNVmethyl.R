@@ -27,15 +27,15 @@
 
 #-R2.adj = the vector of the adjusted-R2. The four elements give the results for the "Age model", 
 #the "Reference model", the "Integrative model" allowing direct CNV-survival association, and the 
-#"Integrative model" allowing no direct CNV-survival association, respectively.
+#"Integrative model" allowing no direct CNV-survival association, respectively
 #-cIndex  = the vector of the c-index. The four elements give the results for the "Age model", 
 #the "Reference model", the "Integrative model" allowing direct CNV-survival association, and the 
-#"Integrative model" allowing no direct CNV-survival association, respectively.
+#"Integrative model" allowing no direct CNV-survival association, respectively
 #-coef = the vector of the coefficients associated to the selected markers with the "Integrative model" 
-#allowing direct CNV-survival association.
+#allowing direct CNV-survival association
 #-coef.2 = the vector of the coefficients associated to the selected markers with the "Integrative model" 
-#allowing no direct CNV-survival association.
-#-coef.4 = the vector of the coefficients associated to the selected markers with the "Reference model".
+#allowing no direct CNV-survival association
+#-coef.4 = the vector of the coefficients associated to the selected markers with the "Reference model"
 
  Same_Level_Original <- function(Gene,methy,CNV,y,Gene_CNV,Gene_Methy,
                                 multi_methy= FALSE, intra =FALSE, pathway=FALSE,
