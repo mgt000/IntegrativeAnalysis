@@ -22,6 +22,20 @@
 #the function "regression" defined in UtilFunctions.R
 # -alpha = penalty used in the glmnet function, alpha = 1 corresponds to the lasso penalty
 
+#Desciption of outputs of the "Integrated_Original" function:
+
+#-R2.adj = the vector of the adjusted-R2. The four elements give the results for the "Age model", 
+#the "Reference model", the "Integrative model" allowing direct CNV-survival association, and the 
+#"Integrative model" allowing no direct CNV-survival association, respectively
+#-cIndex  = the vector of the c-index. The four elements give the results for the "Age model", 
+#the "Reference model", the "Integrative model" allowing direct CNV-survival association, and the 
+#"Integrative model" allowing no direct CNV-survival association, respectively
+#-coef = the vector of the coefficients associated to the selected markers with the "Integrative model" 
+#allowing direct CNV-survival association
+#-coef.2 = the vector of the coefficients associated to the selected markers with the "Integrative model" 
+#allowing no direct CNV-survival association
+#-coef.4 = the vector of the coefficients associated to the selected markers with the "Reference model"
+
  Integrated_Original <- function(Gene,methy, CNV, y, Gene_CNV, Gene_Methy, Gene_Pathway,
                                 multi_methy= FALSE, intra =TRUE, pathway=FALSE,
                                 nfolds=10, alpha =1)
@@ -475,7 +489,6 @@
     p = as.numeric(length(coef4[coef4!=0]))
     R2.adj[2] = 1-(1-R2[2])*(n-1)/(n-p-1)
  
-    return(list(R2=R2,R2.adj=R2.adj,cIndex=cIndex,Xmeth1=Xmeth1,X=X,coef=coef,
-                coef4=coef4,coefNo=coef.2))
+    return(list(R2.adj=R2.adj,cIndex=cIndex,coef=coef,coef.2 =coef.2, coef.4=coef4))
 }
 
