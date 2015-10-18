@@ -20,7 +20,7 @@ Gene_CNV <- read.csv("Gene_CNV.csv",sep=";")
 Gene_Pathway <- read.csv("Gene_Pathway.csv", sep=";")
 
 # import survival data (survival time and censoring indicator) and other clinical covariates
-y <- read.csv("Y.csv", header=TRUE, sep=",")
+y <- read.csv("Y.csv", header=TRUE, sep=";")
 
 # The examples below run the main function that implements the integrative genomic model 
 # allowing for association between CNVs and methylations
