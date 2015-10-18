@@ -30,8 +30,8 @@ y <- read.csv("Y.csv", header=TRUE, sep=",")
 ana = Integrated_Original(Gene = Gene, methy = methy, CNV = CNV, y = y,
                           Gene_CNV = Gene_CNV, Gene_Methy = Gene_Methy, 
                           Gene_Pathway = Gene_Pathway, multi_methy = FALSE,
-                          intra = TRUE, pathway = FALSE,nfolds = 10,
-                          alpha = 1, nfoldsIntra = 10)
+                          intra = TRUE, pathway = FALSE,nfolds = 50,
+                          alpha = 1)
 
 ana$R2.adj
 
@@ -41,6 +41,6 @@ ana.network = Integrated_Original(Gene = Gene, methy = methy, CNV = CNV, y = y,
                           Gene_CNV = Gene_CNV, Gene_Methy = Gene_Methy, 
                           Gene_Pathway = Gene_Pathway, multi_methy = FALSE,
                           intra = FALSE, pathway = TRUE,nfolds = 50,
-                          alpha = 1, nfoldsIntra = 10)
+                          alpha = 1)
 ana.network$R2.adj
 
