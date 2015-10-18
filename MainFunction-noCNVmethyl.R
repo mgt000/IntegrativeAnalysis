@@ -21,11 +21,10 @@
 # -nfolds = number of folds used in the cross-validation procedure of the glmnet function called in  
 #the function "regression" defined in UtilFunctions.R
 # -alpha = penalty to use in the glmnet function, alpha = 1 corresponds to the lasso penalty
-# -nfoldsIntra = number of folds for the cross-validation procedure in the glmnet function 
 
  Same_Level_Original <- function(Gene,methy,CNV,y,Gene_CNV,Gene_Methy,
                                 multi_methy= FALSE, intra =FALSE, pathway=FALSE,
-                                nfolds=10,alpha =1,nfoldsIntra = 10)
+                                nfolds=10,alpha =1)
 {
   n = nrow(y) 
    
@@ -74,7 +73,7 @@
     
     y_tmp = as.matrix(Gene[,g])
     colnames(y_tmp) = g
-    res3[[g]] = regression(x=X,y=y_tmp,alpha=1, nfolds =nfoldsIntra)
+    res3[[g]] = regression(x=X,y=y_tmp,alpha=1, nfolds =nfolds)
     
     
     select = res3[[g]]$active_index 
@@ -216,7 +215,7 @@
           X = part_CNV
           y_tmp = as.matrix(Gene[,g])
           colnames(y_tmp) = g
-          resC[[g]] = regression(x=X,y=y_tmp,alpha =1 ,nfolds= nfoldsIntra)
+          resC[[g]] = regression(x=X,y=y_tmp,alpha =1 ,nfolds= nfolds)
           select = resC[[g]]$active_index 
           ##gives us all variables selected to explain the gene expression
           ind = which(colnames(part_CNV)%in%names(select))
@@ -248,7 +247,7 @@
           X = part_CNV
           y_tmp = as.matrix(Gene[,g])
           colnames(y_tmp) = g
-          resC[[g]] = regression(x=X,y=y_tmp,alpha =1 ,nfolds= nfoldsIntra)
+          resC[[g]] = regression(x=X,y=y_tmp,alpha =1 ,nfolds= nfolds)
           select = resC[[g]]$active_index 
           ##gives us all variables selected to explain the gene expression
           ind = which(colnames(part_CNV)%in%names(select))
