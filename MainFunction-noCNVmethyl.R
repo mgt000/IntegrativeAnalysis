@@ -23,19 +23,18 @@
 # -alpha = penalty to use in the glmnet function, alpha = 1 corresponds to the lasso penalty
 
 
-#Desciption of outputs of the "Same_Level_Original" function:
+# Output of function:
 
-#-R2.adj = the vector of the adjusted-R2. The four elements give the results for the "Age model", 
-#the "Reference model", the "Integrative model" allowing direct CNV-survival association, and the 
-#"Integrative model" allowing no direct CNV-survival association, respectively
-#-cIndex  = the vector of the c-index. The four elements give the results for the "Age model", 
-#the "Reference model", the "Integrative model" allowing direct CNV-survival association, and the 
-#"Integrative model" allowing no direct CNV-survival association, respectively
-#-coef = the vector of the coefficients associated to the selected markers with the "Integrative model" 
-#allowing direct CNV-survival association
-#-coef.2 = the vector of the coefficients associated to the selected markers with the "Integrative model" 
-#allowing no direct CNV-survival association
-#-coef.4 = the vector of the coefficients associated to the selected markers with the "Reference model"
+# -R2.adj = vector of adjusted-R2 value corresponding to four different models:
+#"Age model", "Reference model", "Integrative model" allowing direct CNV-survival association, and  
+#"Integrative model" not allowing direct CNV-survival association, respectively
+# -cIndex  = vector of c-index values corresponding to four different models:
+#"Age model", "Reference model", "Integrative model" allowing direct CNV-survival association, and  
+#"Integrative model" not allowing direct CNV-survival association, respectively
+# -coef = vector of regression coefficients for selected markers in the "Integrative model" allowing direct CNV-survival association
+# -coef.2 = vector of regression coefficients for selected markers in the "Integrative model" not allowing direct CNV-survival association
+# -coef.4 = vector of regression coefficients for selected markers in "Reference model"
+
 
  Same_Level_Original <- function(Gene,methy,CNV,y,Gene_CNV,Gene_Methy,
                                 multi_methy= FALSE, intra =FALSE, pathway=FALSE,
