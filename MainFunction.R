@@ -403,7 +403,7 @@
   LLR_0 = -2*(logNull-logAge)
   cIndex[1] = summary(res)$concordance[1]
   R2[1] = 1-exp((-2/n)*(logAge-logNull))
-  R2.adj[1] = 1-(1-R2[1])*(n-1)/(n-2-1) 
+  R2.adj[1] = 1-(1-R2[1])*(n-1)/(n-1-1) 
   if (intra){
       X = cbind(A1,A2,A3,A4,B1,B2,B3,C1,C2, CNVy)
       X = X[,which(apply(X,2,sum)!=0)]
